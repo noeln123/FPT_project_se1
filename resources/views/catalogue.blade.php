@@ -107,7 +107,7 @@
                     </a>
                 </li>
                 <li class="header-item underline">
-                    <a href="#" class="header-item__link">
+                    <a href="{{ route('goFindDealer') }}" class="header-item__link">
                         Find a dealer
                         <i class="fa-solid fa-location-dot"></i>
                     </a>
@@ -335,191 +335,69 @@
                     </div>
 
                     <div class="home-product">
-                        <div class="grid__row">
-                            @foreach($car_details as $row)
-                            <div class="grid__column2-2">
-                                
-                                <div class="car">
-                                    <?php 
-                                        $str = $row->image;
-                                        $temp = explode(',',$str);
-                                    ?>
-                                    <div class="imgcar-wrap">
-                                        <img src="{{ asset("img/1_$row->id.avif") }}" alt=""
-                                            style="width:auto;height:137px; text-align:center">
-                                    </div>
-                                    <h2 class="name-car">{{$row->name}}</h2>
-                                    <div class="dec">
-                                        <span>
-                                            <i class="fa-solid fa-taxi"></i>
-                                            {{$row->engine_power}}
-                                        </span>
-                                        <span>
-                                            <i class="fa-solid fa-gas-pump"></i>
-                                            {{$row->engine_type}}
-                                        </span>
-                                        <br>
-                                        <span>
-                                            {{-- <i class="fa-solid fa-stairs"></i> --}}
-                                            <img class="dec__icon" src="{{ asset('img/transmission_icon.png') }}" alt="">
-                                            Automatic Transmission
-                                        </span>
-                                    </div>
-
-                                    <div class="price">
-                                        <span>Price</span>
-                                        <br>
-                                        <span class="show-price">{{$row->price}} $</span>
-                                    </div>
-
-                                    <div class="address">
-                                        <span>
-                                            <i class="fa-solid fa-map-pin"></i>
-                                            HuynDai
-                                        </span>
-                                        <br>
-                                        <span>Hoài Đức - Hà Nội</span>
-                                    </div>
-
-                                    <div class="show">
-                                        <a href="{{ route('goVehicleDetail', ['car', $row->id]) }}" class="button_showcar">Show Detail</a>
-                                    </div>
-                                </div>
+                        @if ($car_details == '')
+                            <div>
+                                <p>No product match your search, please try searching relate to brand (toyota, kia, etc.)</p>
                             </div>
-                            @endforeach
+                        @else
+                            <div class="grid__row">
+                                @foreach($car_details as $row)
+                                <div class="grid__column2-2">
+                                    
+                                    <div class="car">
+                                        <?php 
+                                            $str = $row->image;
+                                            $temp = explode(',',$str);
+                                        ?>
+                                        <div class="imgcar-wrap">
+                                            <img src="{{ asset("img/1_$row->id.avif") }}" alt=""
+                                                style="width:auto;height:137px; text-align:center">
+                                        </div>
+                                        <h2 class="name-car">{{$row->name}}</h2>
+                                        <div class="dec">
+                                            <span>
+                                                <i class="fa-solid fa-taxi"></i>
+                                                {{$row->engine_power}}
+                                            </span>
+                                            <span>
+                                                <i class="fa-solid fa-gas-pump"></i>
+                                                {{$row->engine_type}}
+                                            </span>
+                                            <br>
+                                            <span>
+                                                {{-- <i class="fa-solid fa-stairs"></i> --}}
+                                                <img class="dec__icon" src="{{ asset('img/transmission_icon.png') }}" alt="">
+                                                Automatic Transmission
+                                            </span>
+                                        </div>
 
-                            <!-- <div class="grid__column2-2">
-                                <div class="car">
-                                    <img src="https://otovinfast.vn/wp-content/uploads/2019/12/white-sa-1105089f25135.png" alt=""
-                                        style="width:100%;height:auto;">
-                                    <h2 class="name-car">HyunDai i10 2021</h2>
-                                    <div class="dec">
-                                        <span>
-                                            <i class="fa-solid fa-taxi"></i>
-                                            150 kW (202 mã lực)
-                                        </span>
-                                        <span>
-                                            <i class="fa-solid fa-gas-pump"></i>
-                                            Xăng
-                                        </span>
-                                        <span>
-                                            <i class="fa-solid fa-stairs"></i>
-                                            Số Sàn
-                                        </span>
-                                    </div>
+                                        <div class="price">
+                                            <span>Price</span>
+                                            <br>
+                                            <span class="show-price">{{$row->price}} $</span>
+                                        </div>
 
-                                    <div class="price">
-                                        <span>Giá</span>
-                                        <br>
-                                        <span class="show-price">1.920.000.000đ</span>
-                                    </div>
+                                        <div class="address">
+                                            <span>
+                                                <i class="fa-solid fa-map-pin"></i>
+                                                HuynDai
+                                            </span>
+                                            <br>
+                                            <span>Hoài Đức - Hà Nội</span>
+                                        </div>
 
-                                    <div class="address">
-                                        <span>
-                                            <i class="fa-solid fa-map-pin"></i> 
-                                            HuynDai
-                                        </span>
-                                        <br>
-                                        <span>Hoài Đức - Hà Nội</span>
-                                    </div>
-
-                                    <div class="show">
-                                        <a href="{{ route('goVehicleDetail', ['car', $row->id]) }}" class="button_showcar">Show Detail</a>
+                                        <div class="show">
+                                            <a href="{{ route('goVehicleDetail', ['car', $row->id]) }}" class="button_showcar">Show Detail</a>
+                                        </div>
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
-
-                            <div class="grid__column2-2">
-                                <div class="car">
-                                    <img src="https://otovinfast.vn/wp-content/uploads/2019/12/white-sa-1105089f25135.png" alt=""
-                                        style="width:100%;height:auto;">
-                                    <h2 class="name-car">HyunDai i10 2021</h2>
-                                    <div class="dec">
-                                        <span>
-                                            <i class="fa-solid fa-taxi"></i>
-                                            150 kW (202 mã lực)
-                                        </span>
-                                        <span>
-                                            <i class="fa-solid fa-gas-pump"></i>
-                                            Xăng
-                                        </span>
-                                        <span>
-                                            <i class="fa-solid fa-stairs"></i>
-                                            Số Sàn
-                                        </span>
-                                    </div>
-
-                                    <div class="price">
-                                        <span>Giá</span>
-                                        <br>
-                                        <span class="show-price">1.920.000.000đ</span>
-                                    </div>
-
-                                    <div class="address">
-                                        <span>
-                                            <i class="fa-solid fa-neuter"></i>
-                                            HuynDai
-                                        </span>
-                                        <br>
-                                        <span>Hoài Đức - Hà Nội</span>
-                                    </div>
-
-                                    <div class="show">
-                                        <a href="{{ route('goVehicleDetail', ['car', $row->id]) }}" class="button_showcar">Show Detail</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="grid__column2-2">
-                                <div class="car">
-                                    <img src="https://otovinfast.vn/wp-content/uploads/2019/12/white-sa-1105089f25135.png" alt=""
-                                        style="width:100%;height:auto;">
-                                    <h2 class="name-car">HyunDai i10 2021</h2>
-                                    <div class="dec">
-                                        <span>
-                                            <i class="fa-solid fa-taxi"></i>
-                                            150 kW (202 mã lực)
-                                        </span>
-                                        <span>
-                                            <i class="fa-solid fa-gas-pump"></i>
-                                            Xăng
-                                        </span>
-                                        <span>
-                                            <i class="fa-solid fa-stairs"></i>
-                                            Số Sàn
-                                        </span>
-                                    </div>
-
-                                    <div class="price">
-                                        <span>Giá</span>
-                                        <br>
-                                        <span class="show-price">1.920.000.000đ</span>
-                                    </div>
-
-                                    <div class="address">
-                                        <span>
-                                            <i class="fa-solid fa-neuter"></i>
-                                            HuynDai
-                                        </span>
-                                        <br>
-                                        <span>Hoài Đức - Hà Nội</span>
-                                    </div>
-
-                                    <div class="show">
-                                        <a href="{{ route('goVehicleDetail', ['car', $row->id]) }}" class="button_showcar">Show Detail</a>
-                                    </div>
-                                </div>
-                            </div> -->
-                        </div>
-                            
-                            
+                        @endif
 
                             
                     </div>
 
-                    <div class="sub-show">
-                        <button class="show__list-car">See more cars</button>
-                    </div>
                 </div>
             </div>
 
@@ -584,19 +462,19 @@
                     <h3>Featured Cars</h3>
                     <ul class="footer-fastlink__list">
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Toyota Hilux 2.8L</a>
+                            <a href="{{ route('goVehicleDetail', ['car', 16]) }}" class="fastlink__link">Toyota Hilux 2.8L</a>
                         </li>
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Toyota Avanza Premio CVT</a>
+                            <a href="{{ route('goVehicleDetail', ['car', 15]) }}" class="fastlink__link">Toyota Avanza Premio CVT</a>
                         </li>
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Toyota Innova 2.0E</a>
+                            <a href="{{ route('goVehicleDetail', ['car', 14]) }}" class="fastlink__link">Toyota Innova 2.0E</a>
                         </li>
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Toyota Land Cruiser LC300</a>
+                            <a href="{{ route('goVehicleDetail', ['car', 13]) }}" class="fastlink__link">Toyota Land Cruiser LC300</a>
                         </li>
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Hyundai Venue 2023</a>
+                            <a href="{{ route('goVehicleDetail', ['car', 2]) }}" class="fastlink__link">Hyundai Venue 2023</a>
                         </li>
                     </ul>        
                 </div>
@@ -605,16 +483,16 @@
                     <h3>Featured Motors</h3>
                     <ul class="footer-fastlink__list">
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">New SuperSport 950 S</a>
+                            <a href="{{ route('goVehicleDetail', ['motor', 2]) }}" class="fastlink__link">New SuperSport 950 S</a>
                         </li>
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Streetfighter V4 S</a>
+                            <a href="{{ route('goVehicleDetail', ['motor', 3]) }}" class="fastlink__link">Streetfighter V4 S</a>
                         </li>
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">BMW S1000RR 2022</a>
+                            <a href="{{ route('goVehicleDetail', ['motor', 6]) }}" class="fastlink__link">BMW S1000RR 2022</a>
                         </li> 	
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">BMW S1000R 2021</a>
+                            <a href="{{ route('goVehicleDetail', ['motor', 7]) }}" class="fastlink__link">BMW S1000R 2021</a>
                         </li>
                     </ul>        
                 </div>
@@ -623,10 +501,10 @@
                     <h3>Our services</h3>
                     <ul class="footer-fastlink__list">
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Warranty policy</a>
+                            <a href="/warranty" class="fastlink__link">Warranty policy</a>
                         </li>
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Finance service</a>
+                            <a href="/finance" class="fastlink__link">Finance service</a>
                         </li>
                     </ul>        
                 </div>
@@ -638,7 +516,7 @@
                             <a href="#" class="fastlink__link">About Us</a>
                         </li>
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Contact Us</a>
+                            <a href="/contact" class="fastlink__link">Contact Us</a>
                         </li>
                     </ul>        
                 </div>

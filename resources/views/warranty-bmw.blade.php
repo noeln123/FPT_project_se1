@@ -20,7 +20,7 @@
         <ul class="header-list">
             <li class="header-item header-dropdown">
                 <a href="#" class="header-item__link">Vehicles</a>
-                <div class="dropdown-menu" style="bottom: -74px !important;">
+                <div class="dropdown-menu" style="bottom: -90px !important; border-radius: 5px;">
                     <ul class="dropdown-menu__list">
                         <li class="dropdown-menu__list-item ">
                             <a href="{{ route('goCatalogue2') }}" class="dropdown-menu__list-item-link">Motorcycles
@@ -41,7 +41,7 @@
                 </a>
             </li>
             <li class="header-item underline">
-                <a href="#" class="header-item__link">
+                <a href="{{ route('goFindDealer') }}" class="header-item__link">
                     Find a dealer
                     <i class="fa-solid fa-location-dot"></i>
                 </a>
@@ -80,7 +80,7 @@
 <body>
 
     <div class="noti">
-        <img src="./logo/1.png" style="height: 150px; width: 150px;" alt="BMW">
+        <img src="{{ asset('img/w-1.png') }}" style="height: 150px; width: 150px;" alt="BMW">
         <h2 style="padding-top: 30px;">Highest standards for quality and<br> warranties.</h2>
         <p style = "font-family: calibri; padding-top: 30px; font-size: 25px; letter-spacing: -1px; font-weight: 540; line-height: 30px;" >
             Every new BMW is built to the highest quality standards which allow us to offer an unlimited<br> 
@@ -139,19 +139,19 @@
                 <h3>Featured Cars</h3>
                 <ul class="footer-fastlink__list">
                     <li class="footer-fastlink__item">
-                        <a href="#" class="fastlink__link">Toyota Hilux 2.8L</a>
+                        <a href="{{ route('goVehicleDetail', ['car', 16]) }}" class="fastlink__link">Toyota Hilux 2.8L</a>
                     </li>
                     <li class="footer-fastlink__item">
-                        <a href="#" class="fastlink__link">Toyota Avanza Premio CVT</a>
+                        <a href="{{ route('goVehicleDetail', ['car', 15]) }}" class="fastlink__link">Toyota Avanza Premio CVT</a>
                     </li>
                     <li class="footer-fastlink__item">
-                        <a href="#" class="fastlink__link">Toyota Innova 2.0E</a>
+                        <a href="{{ route('goVehicleDetail', ['car', 14]) }}" class="fastlink__link">Toyota Innova 2.0E</a>
                     </li>
                     <li class="footer-fastlink__item">
-                        <a href="#" class="fastlink__link">Toyota Land Cruiser LC300</a>
+                        <a href="{{ route('goVehicleDetail', ['car', 13]) }}" class="fastlink__link">Toyota Land Cruiser LC300</a>
                     </li>
                     <li class="footer-fastlink__item">
-                        <a href="#" class="fastlink__link">Hyundai Venue 2023</a>
+                        <a href="{{ route('goVehicleDetail', ['car', 2]) }}" class="fastlink__link">Hyundai Venue 2023</a>
                     </li>
                 </ul>        
             </div>
@@ -160,16 +160,16 @@
                 <h3>Featured Motors</h3>
                 <ul class="footer-fastlink__list">
                     <li class="footer-fastlink__item">
-                        <a href="#" class="fastlink__link">New SuperSport 950 S</a>
+                        <a href="{{ route('goVehicleDetail', ['motor', 2]) }}" class="fastlink__link">New SuperSport 950 S</a>
                     </li>
                     <li class="footer-fastlink__item">
-                        <a href="#" class="fastlink__link">Streetfighter V4 S</a>
+                        <a href="{{ route('goVehicleDetail', ['motor', 3]) }}" class="fastlink__link">Streetfighter V4 S</a>
                     </li>
                     <li class="footer-fastlink__item">
-                        <a href="#" class="fastlink__link">BMW S1000RR 2022</a>
+                        <a href="{{ route('goVehicleDetail', ['motor', 6]) }}" class="fastlink__link">BMW S1000RR 2022</a>
                     </li> 	
                     <li class="footer-fastlink__item">
-                        <a href="#" class="fastlink__link">BMW S1000R 2021</a>
+                        <a href="{{ route('goVehicleDetail', ['motor', 7]) }}" class="fastlink__link">BMW S1000R 2021</a>
                     </li>
                 </ul>        
             </div>
@@ -178,10 +178,10 @@
                 <h3>Our services</h3>
                 <ul class="footer-fastlink__list">
                     <li class="footer-fastlink__item">
-                        <a href="#" class="fastlink__link">Warranty policy</a>
+                        <a href="/warranty" class="fastlink__link">Warranty policy</a>
                     </li>
                     <li class="footer-fastlink__item">
-                        <a href="#" class="fastlink__link">Finance service</a>
+                        <a href="/finance" class="fastlink__link">Finance service</a>
                     </li>
                 </ul>        
             </div>
@@ -193,7 +193,7 @@
                         <a href="#" class="fastlink__link">About Us</a>
                     </li>
                     <li class="footer-fastlink__item">
-                        <a href="#" class="fastlink__link">Contact Us</a>
+                        <a href="/contact" class="fastlink__link">Contact Us</a>
                     </li>
                 </ul>        
             </div>

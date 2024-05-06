@@ -22,7 +22,7 @@
             <ul class="header-list">
                 <li class="header-item header-dropdown">
                     <a href="#" class="header-item__link">Vehicles</a>
-                    <div class="dropdown-menu" style="bottom: -74px !important;">
+                    <div class="dropdown-menu" style="bottom: -90px !important; border-radius: 5px;">
                         <ul class="dropdown-menu__list">
                             <li class="dropdown-menu__list-item ">
                                 <a href="{{ route('goCatalogue2') }}" class="dropdown-menu__list-item-link">Motorcycles
@@ -43,7 +43,7 @@
                     </a>
                 </li>
                 <li class="header-item underline">
-                    <a href="#" class="header-item__link">
+                    <a href="{{ route('goFindDealer') }}" class="header-item__link">
                         Find a dealer
                         <i class="fa-solid fa-location-dot"></i>
                     </a>
@@ -91,15 +91,27 @@
                         <td class="maintable__row-data">
                             <div class="maintable__row-data-wrap">
                                 <img src="{{ asset($imgs[0]) }}" alt="" class="maintable__img">
-                                <button class="btn btn-main">Similar Product</button>
-                                <button class="btn">View Detail</button>
+                                <a href="{{route('goCatalogue')}}?&vehicletype={{$carDetails[0]->type_id}}&filter=left" class="">
+                                    <button class="btn btn-main">Similar Product</button>
+                                </a>
+                                <a href="/catalogue/car/{{ $carDetails[0]->id }}">
+                                    <button class="btn">
+                                        View Detail
+                                    </button>
+                                </a>
                             </div>
                         </td>
                         <td class="maintable__row-data">
                             <div class="maintable__row-data-wrap">
                                 <img src="{{ asset($imgs[1]) }}" alt="" class="maintable__img">
-                                <button class="btn btn-main">Similar Product</button>
-                                <button class="btn">View Detail</button>
+                                <a href="{{route('goCatalogue')}}?&vehicletype={{$carDetails[1]->type_id}}&filter=left" class="">
+                                    <button class="btn btn-main">Similar Product</button>
+                                </a>
+                                <a href="/catalogue/car/{{ $carDetails[1]->id }}">
+                                    <button class="btn">
+                                        View Detail
+                                    </button>
+                                </a>
                             </div>
                         </td>
                     </tr>
@@ -163,19 +175,19 @@
                     <h3>Featured Cars</h3>
                     <ul class="footer-fastlink__list">
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Toyota Hilux 2.8L</a>
+                            <a href="{{ route('goVehicleDetail', ['car', 16]) }}" class="fastlink__link">Toyota Hilux 2.8L</a>
                         </li>
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Toyota Avanza Premio CVT</a>
+                            <a href="{{ route('goVehicleDetail', ['car', 15]) }}" class="fastlink__link">Toyota Avanza Premio CVT</a>
                         </li>
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Toyota Innova 2.0E</a>
+                            <a href="{{ route('goVehicleDetail', ['car', 14]) }}" class="fastlink__link">Toyota Innova 2.0E</a>
                         </li>
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Toyota Land Cruiser LC300</a>
+                            <a href="{{ route('goVehicleDetail', ['car', 13]) }}" class="fastlink__link">Toyota Land Cruiser LC300</a>
                         </li>
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Hyundai Venue 2023</a>
+                            <a href="{{ route('goVehicleDetail', ['car', 2]) }}" class="fastlink__link">Hyundai Venue 2023</a>
                         </li>
                     </ul>        
                 </div>
@@ -184,16 +196,16 @@
                     <h3>Featured Motors</h3>
                     <ul class="footer-fastlink__list">
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">New SuperSport 950 S</a>
+                            <a href="{{ route('goVehicleDetail', ['motor', 2]) }}" class="fastlink__link">New SuperSport 950 S</a>
                         </li>
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Streetfighter V4 S</a>
+                            <a href="{{ route('goVehicleDetail', ['motor', 3]) }}" class="fastlink__link">Streetfighter V4 S</a>
                         </li>
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">BMW S1000RR 2022</a>
+                            <a href="{{ route('goVehicleDetail', ['motor', 6]) }}" class="fastlink__link">BMW S1000RR 2022</a>
                         </li> 	
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">BMW S1000R 2021</a>
+                            <a href="{{ route('goVehicleDetail', ['motor', 7]) }}" class="fastlink__link">BMW S1000R 2021</a>
                         </li>
                     </ul>        
                 </div>
@@ -202,10 +214,10 @@
                     <h3>Our services</h3>
                     <ul class="footer-fastlink__list">
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Warranty policy</a>
+                            <a href="/warranty" class="fastlink__link">Warranty policy</a>
                         </li>
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Finance service</a>
+                            <a href="/finance" class="fastlink__link">Finance service</a>
                         </li>
                     </ul>        
                 </div>
@@ -217,7 +229,7 @@
                             <a href="#" class="fastlink__link">About Us</a>
                         </li>
                         <li class="footer-fastlink__item">
-                            <a href="#" class="fastlink__link">Contact Us</a>
+                            <a href="/contact" class="fastlink__link">Contact Us</a>
                         </li>
                     </ul>        
                 </div>
@@ -246,7 +258,7 @@
                 <a href="#" style="color:#999999; text-decoration: underline; padding-right: 6px;">Terms Of Service</a>
                 <p style="display:inline; color:#999999; padding-right: 6px; margin: 2px 0px;">|</p>
                 <a href="#" style="color:#999999; text-decoration: underline;">Privacy Policy</a>
-                <p style="padding-top: 10px">© and ™ TrueCar, Inc. All rights reserved. Vehicle photos © Evox Images © 1986-2024 Chrome Data Solutions, LP</p>
+                <p style="padding-top: 10px; margin-top:5px; padding-bottom:10px; margin-bottom:0px">© and ™ TrueCar, Inc. All rights reserved. Vehicle photos © Evox Images © 1986-2024 Chrome Data Solutions, LP</p>
             </div>
         </div>
     </div>

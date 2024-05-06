@@ -23,7 +23,7 @@
             <ul class="header-list">
                 <li class="header-item header-dropdown">
                     <a href="#" class="header-item__link">Vehicles</a>
-                    <div class="dropdown-menu" style="bottom: -74px !important;">
+                    <div class="dropdown-menu" style="bottom: -90px !important; border-radius: 5px;">
                         <ul class="dropdown-menu__list">
                             <li class="dropdown-menu__list-item ">
                                 <a href="{{ route('goCatalogue2') }}" class="dropdown-menu__list-item-link">Motorcycles
@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li class="header-item underline">
-                    <a href="#" class="header-item__link">
+                    <a href="{{ route('goFindDealer') }}" class="header-item__link">
                         Find a dealer
                         <i class="fa-solid fa-location-dot"></i>
                     </a>
@@ -81,7 +81,7 @@
         <h1 class='txtdeepshadow'>Welcome to auto insurance service of Huyndai</h1>
     </div>
     <div class="noti" style="padding-top: 0px;">
-        <img src="./logo/2.png" style="height: 230px; width: 230px;" alt="Huyndai">
+        <img src="{{ asset('img/w-2.png') }}" style="height: 230px; width: 230px;" alt="Huyndai">
         <h2>Highest standards for quality and<br> warranties.</h2>
         <p style = "font-family: calibri; padding-top: 30px; font-size: 25px; letter-spacing: -1px; font-weight: 540; line-height: 30px;" >
             Every new Hyundai is built to the highest quality standards which allow us to offer an unlimited<br> 
@@ -136,4 +136,97 @@
 </body>
 </html>
 
-<a>https://www.hyundai.com/eu/driving-hyundai/owning-a-hyundai/why-hyundai-services/warranty.html</a>
+<div class="wrap-footer">
+    <div class="footer">
+        <div class="footer-fastlink">
+            <div class="footer-fastlink__wrap">
+                <h3>Featured Cars</h3>
+                <ul class="footer-fastlink__list">
+                    <li class="footer-fastlink__item">
+                        <a href="{{ route('goVehicleDetail', ['car', 16]) }}" class="fastlink__link">Toyota Hilux 2.8L</a>
+                    </li>
+                    <li class="footer-fastlink__item">
+                        <a href="{{ route('goVehicleDetail', ['car', 15]) }}" class="fastlink__link">Toyota Avanza Premio CVT</a>
+                    </li>
+                    <li class="footer-fastlink__item">
+                        <a href="{{ route('goVehicleDetail', ['car', 14]) }}" class="fastlink__link">Toyota Innova 2.0E</a>
+                    </li>
+                    <li class="footer-fastlink__item">
+                        <a href="{{ route('goVehicleDetail', ['car', 13]) }}" class="fastlink__link">Toyota Land Cruiser LC300</a>
+                    </li>
+                    <li class="footer-fastlink__item">
+                        <a href="{{ route('goVehicleDetail', ['car', 2]) }}" class="fastlink__link">Hyundai Venue 2023</a>
+                    </li>
+                </ul>        
+            </div>
+
+            <div class="footer-fastlink__wrap">
+                <h3>Featured Motors</h3>
+                <ul class="footer-fastlink__list">
+                    <li class="footer-fastlink__item">
+                        <a href="{{ route('goVehicleDetail', ['motor', 2]) }}" class="fastlink__link">New SuperSport 950 S</a>
+                    </li>
+                    <li class="footer-fastlink__item">
+                        <a href="{{ route('goVehicleDetail', ['motor', 3]) }}" class="fastlink__link">Streetfighter V4 S</a>
+                    </li>
+                    <li class="footer-fastlink__item">
+                        <a href="{{ route('goVehicleDetail', ['motor', 6]) }}" class="fastlink__link">BMW S1000RR 2022</a>
+                    </li> 	
+                    <li class="footer-fastlink__item">
+                        <a href="{{ route('goVehicleDetail', ['motor', 7]) }}" class="fastlink__link">BMW S1000R 2021</a>
+                    </li>
+                </ul>        
+            </div>
+
+            <div class="footer-fastlink__wrap">
+                <h3>Our services</h3>
+                <ul class="footer-fastlink__list">
+                    <li class="footer-fastlink__item">
+                        <a href="/warranty" class="fastlink__link">Warranty policy</a>
+                    </li>
+                    <li class="footer-fastlink__item">
+                        <a href="/finance" class="fastlink__link">Finance service</a>
+                    </li>
+                </ul>        
+            </div>
+
+            <div class="footer-fastlink__wrap">
+                <h3>About</h3>
+                <ul class="footer-fastlink__list">
+                    <li class="footer-fastlink__item">
+                        <a href="#" class="fastlink__link">About Us</a>
+                    </li>
+                    <li class="footer-fastlink__item">
+                        <a href="/contact" class="fastlink__link">Contact Us</a>
+                    </li>
+                </ul>        
+            </div>
+
+        </div>
+
+        <div class="footer-social">
+            <div class="footer-social__icons">
+                <i class="footer-social__icon fa-brands fa-instagram"></i>
+                <i class="footer-social__icon fa-brands fa-square-facebook"></i>
+                <i class="footer-social__icon fa-brands fa-twitter"></i>
+                <i class="footer-social__icon fa-brands fa-youtube"></i>
+                <i class="footer-social__icon fa-brands fa-linkedin"></i>
+            </div>
+            <div class="footer-social__dowloads">
+                <img class='download-imgs-1' src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="">
+                <img class='download-imgs-2' src="{{ asset('img/dowload-apple.png') }}" alt="">
+            </div>
+        </div>
+
+        <div class="footer-disclamer">
+            <p style="margin: 30px 0 5px 0">For questions about the AutoWorld Buying Service please call <a href="#" style="text-decoration: underline; color: #999999">1-888-878-3227</a><br>
+            Certified Dealers are contractually obligated by TrueCar to meet certain customer service requirements and complete the AutoWorld Dealer Certification Program.<br>
+            AutoWorld does not broker, sell, or lease motor vehicles. Unless otherwise noted, all vehicles shown on this website are offered for sale by licensed motor vehicle dealers. All vehicles are subject to prior sale. By accessing this website, you agree to the AutoWorld Terms of Service and Privacy Policy.
+            </p>
+            <a href="#" style="color:#999999; text-decoration: underline; padding-right: 6px;">Terms Of Service</a>
+            <p style="display:inline; color:#999999; padding-right: 6px; margin: 2px 0px;">|</p>
+            <a href="#" style="color:#999999; text-decoration: underline;">Privacy Policy</a>
+            <p style="padding-top: 10px; margin-top:5px; padding-bottom:10px; margin-bottom:0px">© and ™ TrueCar, Inc. All rights reserved. Vehicle photos © Evox Images © 1986-2024 Chrome Data Solutions, LP</p>
+        </div>
+    </div>
+</div>

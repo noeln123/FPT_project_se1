@@ -99,7 +99,7 @@
             <ul class="header-list">
                 <li class="header-item header-dropdown">
                     <a href="#" class="header-item__link">Vehicles</a>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu" style="bottom: -90px !important; border-radius: 5px;">
                         <ul class="dropdown-menu__list">
                             <li class="dropdown-menu__list-item ">
                                 <a href="{{ route('goCatalogue2') }}" class="dropdown-menu__list-item-link">Motorcycles
@@ -120,7 +120,7 @@
                     </a>
                 </li>
                 <li class="header-item underline">
-                    <a href="#" class="header-item__link">
+                    <a href="{{ route('goFindDealer') }}" class="header-item__link">
                         Find a dealer
                         <i class="fa-solid fa-location-dot"></i>
                     </a>

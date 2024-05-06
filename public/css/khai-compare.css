@@ -33,15 +33,19 @@ body {
     box-sizing: border-box;
 }
 
-.selectbox select, input {
+.selectbox select {
     color: #343434;
     background-color: white;
     border-radius: 4px;
     border: none;
     appearance: none;
     width: 100%;
-    padding: 20px 15px 1px 15px;
+    padding: 20px 15px 7px 15px;
     font-size: 16px;
+}
+
+.selectbox select:focus-visible {
+    outline: none;
 }
 
 .selectbox p:nth-child(2) {

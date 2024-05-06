@@ -1,0 +1,139 @@
+.body-find {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.find-left {
+    width: 340px;
+    text-align: center;
+    margin: 0 auto;
+    height: 500px;
+}
+
+.map-right {
+    width: calc(100% - 340px);
+    height: 647px;
+}
+
+.grid-find2 {
+    padding: 0 10%;
+}
+
+.find {
+    border: 1px solid #757575;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.bd-find {
+    padding-bottom: 20px;
+}
+
+.find>i {
+    line-height: 24px;
+    padding: 0 10px;
+}
+
+.find>input {
+    border: none;
+    outline: none;
+    border-right: 1px solid #d4d4d4;
+    padding-right: 30px;
+}
+
+.find-name {
+    border: 0;
+    background-color: #fff;
+    padding-left: 5%;
+    color: #000;
+}
+
+.show-map {
+    text-align: left;
+    border-top: 1px solid #757575;
+}
+
+.show-map h3,
+h4 {
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.show-map>p {
+    font-size: 15px;
+    margin: 0;
+    color: #333333;
+}
+
+.findDetail {
+    padding-top: 20px;
+}
+
+.findDetail a {
+    color: #000;
+    padding-right: 15px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.map-toyota,
+.map-kia,
+.map-hyundai {
+    overflow-y: scroll;
+    height: calc(100% + 35px);
+    display: none;
+}
+
+.contact-dealer {
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-dealer__button {
+    background-color: #fff;
+    border: 2px solid #757575;
+    padding: 15px 30px;
+    font-weight: 600;
+}
+
+.contact-dealer__button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.hours-time tr,
+td {
+    padding-right: 20px;
+}
+
+.find>button:hover {
+    cursor: pointer;
+}
+
+.bgr-find {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    opacity: 0.6;
+}
+
+.find-dealer {
+    box-sizing: border-box;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 12%;
+    background-color: #fff;
+    padding-top: 50px;
+    padding-bottom: 90px;
+    position: relative;
+}
+
+.grid-find {
+    padding: 0 150px;
+}

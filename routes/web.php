@@ -13,5 +13,6 @@ Route::get('/register', 'App\Http\Controllers\CarsController@goRegister')->name(
 Route::get('/warranty', 'App\Http\Controllers\CarsController@goWarranty')->name('goWarranty');
 Route::get('/warranty/{brand}', 'App\Http\Controllers\CarsController@goWarrantyBrand')->name('goWarrantyBrand');
 Route::get('/finance', 'App\Http\Controllers\CarsController@goFinance')->name('goFinance');
+Route::get('/find_a_dealer', 'App\Http\Controllers\CarsController@goFindDealer')->name('goFindDealer');
 
 Route::get('/catalogue/motor', 'App\Http\Controllers\CarsController@goCatalogue2')->name('goCatalogue2');

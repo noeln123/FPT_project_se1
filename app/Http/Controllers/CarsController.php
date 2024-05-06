@@ -143,6 +143,7 @@ class CarsController extends Controller
                 'car_details.name',
                 'car_details.price',
                 'car_details.fuel_efficiency',
+                'car_details.type_id',
                 'car_company.company AS company_name',
                 'color.color AS color_name',
                 'car_type.type AS type_name',
@@ -213,6 +214,7 @@ class CarsController extends Controller
             'car_details.id',
             'car_details.name',
             'car_details.price',
+            'car_details.type_id',
             'car_details.fuel_efficiency',
             'car_company.company AS company_name',
             'color.color AS color_name',
@@ -273,6 +275,9 @@ class CarsController extends Controller
         return view('finance');
     }
 
+    public function goFindDealer() {
+        return view('findDealer');
+    }
 
 
 
